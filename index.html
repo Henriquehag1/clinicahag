@@ -97,13 +97,16 @@
           </div>
 
           <div class="reveal" style="--i:2">
-            <figure class="frame" data-parallax="0.06">
+            <figure class="frame" data-parallax="0.06" style="--gray:.8">
               <span class="frame__hud" aria-hidden="true"></span>
               <span class="tag frame__tag" aria-hidden="true">HAG · 01</span>
-              <!-- Substituir o .placeholder por <img class="frame__media" src="assets/img/retrato.jpg" alt="Retrato do Dr. Henrique Alves Gonzaga" loading="lazy" width="800" height="1000"> quando houver foto -->
-              <div class="frame__media placeholder" role="img" aria-label="Retrato do Dr. Henrique, a inserir">
-                <span class="placeholder__label">Retrato do Dr. Henrique, a inserir</span>
-              </div>
+              <img class="frame__media"
+                   src="assets/img/henrique-hero.jpg"
+                   srcset="assets/img/henrique-hero-700.jpg 701w, assets/img/henrique-hero.jpg 934w"
+                   sizes="(min-width: 52rem) 32rem, 88vw"
+                   width="934" height="1400" alt="Dr. Henrique Alves Gonzaga"
+                   fetchpriority="high" decoding="async">
+              <span class="frame__grain" aria-hidden="true"></span>
             </figure>
           </div>
         </div>

@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: confirmar o domínio de produção e ajustar todas as URLs <loc> abaixo -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.clinicahag.com/</loc>
+    <loc>https://clinicahag.com/</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/sobre.html</loc>
+    <loc>https://clinicahag.com/sobre.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/metodo.html</loc>
+    <loc>https://clinicahag.com/metodo.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/acompanhamento.html</loc>
+    <loc>https://clinicahag.com/acompanhamento.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/atendimento.html</loc>
+    <loc>https://clinicahag.com/atendimento.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/contato.html</loc>
+    <loc>https://clinicahag.com/contato.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.clinicahag.com/privacidade.html</loc>
+    <loc>https://clinicahag.com/privacidade.html</loc>
     <lastmod>2026-06-04</lastmod>
     <priority>0.3</priority>
   </url>

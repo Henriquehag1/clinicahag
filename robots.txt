@@ -4,5 +4,4 @@ Allow: /
 # Página interna de referência (não indexar)
 Disallow: /design-system.html
 
-# TODO: confirmar o domínio de produção na URL abaixo
-Sitemap: https://www.clinicahag.com/sitemap.xml
+Sitemap: https://clinicahag.com/sitemap.xml

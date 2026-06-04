@@ -53,8 +53,10 @@ Procure por `TODO` e `[PREENCHER: ...]` no código. Os principais pontos:
 - [ ] **WhatsApp**: trocar o número placeholder `5511000000000` pelo número real da
       secretaria em **todas** as páginas (busque por `wa.me/5511000000000`). Formato
       internacional, só dígitos (ex.: `5511987654321`).
-- [ ] **Domínio**: confirmar o domínio de produção e ajustar as URLs em `<link rel="canonical">`
-      e nas metatags Open Graph de cada página, além de `robots.txt` e `sitemap.xml`.
+- [x] **Domínio**: definido como `clinicahag.com` (apex, sem `www`). `canonical`, Open Graph,
+      `robots.txt` e `sitemap.xml` já apontam para `https://clinicahag.com`. Para servir nesse
+      domínio no GitHub Pages: configure o domínio personalizado em Settings → Pages e adicione
+      um arquivo `CNAME` na raiz com `clinicahag.com` (mais o apontamento de DNS).
 - [ ] **Sobre** (`sobre.html`): preencher formação e títulos **apenas com informações
       verificadas** (graduação, nutrologia, medicina do esporte). Nada foi presumido.
 - [ ] **Contato** (`contato.html`): preencher o horário de atendimento da secretaria.

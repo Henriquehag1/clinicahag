@@ -260,6 +260,24 @@ strong, b { font-weight: var(--weight-semibold); }
 /* Fio divisor sutil */
 .rule { height: 1px; border: 0; background: var(--color-line); }
 
+/* Alinhamento e centralização */
+.text-center { text-align: center; }
+.mx-auto { margin-inline: auto; }
+
+/* Hero — primeira seção da página, com respiro extra no topo */
+.hero { padding-block: clamp(3rem, 8vw, 6.5rem) var(--section-y); }
+
+/* Marcador editorial de conteúdo a preencher (remover ao preencher) */
+.todo {
+  display: block;
+  border-left: 2px dashed var(--color-muted);
+  padding: 0.35rem 0 0.35rem 0.9rem;
+  margin-block: 0.5rem;
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: var(--text-sm);
+}
+
 /* Acessibilidade: conteúdo só para leitores de tela */
 .sr-only {
   position: absolute; width: 1px; height: 1px;

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema de Design · Método HAG</title>
+  <meta name="description" content="Guia visual do sistema de design do site Método HAG — cores, tipografia e componentes. Página interna de referência.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Fontes (Google Fonts): Fraunces (títulos) + Hanken Grotesk (corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..400;1,9..144,300..400&family=Hanken+Grotesk:wght@400..600&display=swap">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos exclusivos desta página de guia (não fazem parte do site) -->
+  <style>
+    .guide-hero { padding-block: clamp(3rem, 8vw, 6rem) var(--space-2xl); }
+    .swatches { display: grid; gap: var(--space-md); grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 48rem) { .swatches { grid-template-columns: repeat(3, 1fr); } }
+    .swatch__chip { height: 5.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-line); }
+    .swatch__name { font-weight: 600; margin-top: var(--space-xs); }
+    .swatch__meta { color: var(--color-muted); font-size: var(--text-sm); }
+    .type-row { padding-block: var(--space-sm); border-bottom: 1px solid var(--color-line-soft); }
+    .type-row__tag { color: var(--color-muted); font-size: var(--text-xs); letter-spacing: .08em; text-transform: uppercase; }
+    .demo-row { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; }
+    .token-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+    .token-table th, .token-table td { text-align: left; padding: .65rem .75rem; border-bottom: 1px solid var(--color-line-soft); }
+    .token-table th { color: var(--color-muted); font-weight: 600; }
+    .token-table code { background: var(--color-accent-tint); padding: .1rem .4rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ================= HEADER COMPARTILHADO ================= -->
+  <header class="site-header">
+    <div class="site-header__inner container">
+      <a class="brand" href="index.html" aria-label="Método HAG — página inicial">
+        <span class="brand__mark" aria-hidden="true">H</span>
+        <span class="brand__word">Método <strong>HAG</strong></span>
+      </a>
+
+      <nav class="nav" id="primary-nav" data-nav aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Início</a></li>
+          <li><a class="nav__link" href="sobre.html">Sobre</a></li>
+          <li><a class="nav__link" href="metodo.html">Método</a></li>
+          <li><a class="nav__link" href="acompanhamento.html">Acompanhamento</a></li>
+          <li><a class="nav__link" href="atendimento.html">Atendimento</a></li>
+          <li><a class="nav__link" href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav__cta">
+          <!-- TODO: trocar 5511000000000 pelo número real da secretaria (formato internacional, só dígitos) -->
+          <a class="btn btn--primary" href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20do%20M%C3%A9todo%20HAG."
+             target="_blank" rel="noopener">Falar com a equipe</a>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" type="button" data-nav-toggle
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ================= INTRO ================= -->
+    <section class="guide-hero section--alt">
+      <div class="container">
+        <p class="eyebrow reveal" style="--i:0">Sistema de Design</p>
+        <h1 class="display reveal" style="--i:1">Método <em>HAG</em><br>linguagem visual.</h1>
+        <p class="lead text-muted reveal" style="--i:2; margin-top:1.25rem">
+          Página de referência interna: cores, tipografia e componentes que sustentam
+          o site. Clean, luminoso e editorial — verde-pinheiro como único acento.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CORES ================= -->
+    <section class="section container">
+      <p class="eyebrow">Paleta</p>
+      <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Cor</h2>
+      <div class="swatches">
+        <div>
+          <div class="swatch__chip" style="background:#FCFCFA"></div>
+          <p class="swatch__name">Fundo principal</p>
+          <p class="swatch__meta">#FCFCFA · quase branco luminoso</p>
+        </div>
+        <div>
+          <div class="swatch__chip" style="background:#F6F4EF"></div>
+          <p class="swatch__name">Fundo alternado</p>
+          <p class="swatch__meta">#F6F4EF · off-white quente</p>
+        </div>
+        <div>
+          <div class="swatch__chip" style="background:#FFFFFF"></div>
+          <p class="swatch__name">Superfície (cartão)</p>
+          <p class="swatch__meta">#FFFFFF · branco puro</p>
+        </div>
+        <div>
+          <div class="swatch__chip" style="background:#1F1C18"></div>
+          <p class="swatch__name">Tinta (texto/título)</p>
+          <p class="swatch__meta">#1F1C18</p>
+        </div>
+        <div>
+          <div class="swatch__chip" style="background:#21453B"></div>
+          <p class="swatch__name">Acento — verde-pinheiro</p>
+          <p class="swatch__meta">#21453B · botões, links, detalhes</p>
+        </div>
+        <div>
+          <div class="swatch__chip" style="background:#8A8275"></div>
+          <p class="swatch__name">Neutro de apoio</p>
+          <p class="swatch__meta">#8A8275 · secundário, legendas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TIPOGRAFIA ================= -->
+    <section class="section--alt section">
+      <div class="container">
+        <p class="eyebrow">Tipografia</p>
+        <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Escala &amp; vozes</h2>
+        <p class="lead text-muted" style="margin-bottom:var(--space-xl)">
+          <strong>Fraunces</strong> nos títulos (pesos 300–400, grande e generoso).
+          <strong>Hanken Grotesk</strong> no corpo, entrelinha 1.65, medida controlada.
+        </p>
+
+        <div class="type-row"><span class="type-row__tag">display / hero · Fraunces 300</span>
+          <div class="display">Precisão e cuidado <em>caminham juntos</em>.</div></div>
+        <div class="type-row"><span class="type-row__tag">h2 · Fraunces 300</span>
+          <h2 class="h2">Acompanhamento que enxerga a pessoa inteira</h2></div>
+        <div class="type-row"><span class="type-row__tag">h3 · Fraunces</span>
+          <h3 class="h3">Nutrologia e medicina do esporte</h3></div>
+        <div class="type-row"><span class="type-row__tag">lead · Hanken Grotesk</span>
+          <p class="lead">Texto de entrada, com peso visual maior para guiar a leitura sem competir com o título.</p></div>
+        <div class="type-row"><span class="type-row__tag">corpo · Hanken Grotesk 400</span>
+          <p class="measure">Parágrafo de corpo na medida de leitura controlada. A entrelinha generosa e o espaço em branco dão calma e clareza ao texto, reforçando a autoridade serena da marca sem nunca soar fria ou genérica.</p></div>
+        <div class="type-row"><span class="type-row__tag">legenda · Hanken Grotesk · muted</span>
+          <p class="text-muted" style="font-size:var(--text-sm)">Legenda / nota de apoio em neutro #8A8275.</p></div>
+      </div>
+    </section>
+
+    <!-- ================= BOTÕES & LINKS ================= -->
+    <section class="section container">
+      <p class="eyebrow">Componentes</p>
+      <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Botões e links</h2>
+      <div class="demo-row" style="margin-bottom:var(--space-lg)">
+        <a class="btn btn--primary" href="#">Falar com a equipe
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#">Conhecer o método</a>
+        <a class="btn btn--primary btn--lg" href="#">Botão grande</a>
+      </div>
+      <div class="demo-row">
+        <a class="link-arrow" href="#">Conhecer o acompanhamento</a>
+        <a href="#">link de texto padrão</a>
+      </div>
+    </section>
+
+    <!-- ================= CARDS ================= -->
+    <section class="section--alt section">
+      <div class="container">
+        <p class="eyebrow">Componentes</p>
+        <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Cartões</h2>
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="card__index">01</span>
+            <h3 class="card__title">Avaliação ampla</h3>
+            <p class="card__body">História clínica, hábitos e objetivos analisados com profundidade antes de qualquer conduta.</p>
+          </article>
+          <article class="card">
+            <span class="card__index">02</span>
+            <h3 class="card__title">Plano individual</h3>
+            <p class="card__body">O médico define o nível de acompanhamento adequado a cada pessoa — sem fórmulas prontas.</p>
+          </article>
+          <article class="card card--quiet">
+            <span class="card__index">03</span>
+            <h3 class="card__title">Continuidade</h3>
+            <p class="card__body">Reavaliações periódicas mantêm o cuidado ajustado ao longo do tempo. (Variante "quiet".)</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLACEHOLDER DE IMAGEM ================= -->
+    <section class="section container">
+      <p class="eyebrow">Componentes</p>
+      <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Áreas de imagem</h2>
+      <div class="split">
+        <div class="stack">
+          <h3 class="h3">Tratadas como bloco, não como foto de banco</h3>
+          <p class="measure text-muted">Onde houver foto, usamos um placeholder elegante de tom suave com moldura interna. Substituir por <code>&lt;img&gt;</code> real quando a imagem definitiva estiver disponível.</p>
+        </div>
+        <figure class="placeholder">
+          <span class="placeholder__label">Retrato do Dr. Henrique — a inserir</span>
+        </figure>
+      </div>
+      <div class="grid grid--2" style="margin-top:var(--space-xl)">
+        <figure class="placeholder placeholder--wide"><span class="placeholder__label">Ambiente do consultório — a inserir</span></figure>
+        <figure class="placeholder placeholder--square"><span class="placeholder__label">Detalhe — a inserir</span></figure>
+      </div>
+    </section>
+
+    <!-- ================= TOKENS DE REFERÊNCIA ================= -->
+    <section class="section--alt section">
+      <div class="container container--narrow">
+        <p class="eyebrow">Referência</p>
+        <h2 class="h2" style="margin-top:.5rem;margin-bottom:var(--space-lg)">Principais tokens CSS</h2>
+        <table class="token-table">
+          <thead><tr><th>Token</th><th>Uso</th></tr></thead>
+          <tbody>
+            <tr><td><code>--color-accent</code></td><td>Verde-pinheiro, acento único</td></tr>
+            <tr><td><code>--font-display</code></td><td>Fraunces (títulos)</td></tr>
+            <tr><td><code>--font-body</code></td><td>Hanken Grotesk (corpo)</td></tr>
+            <tr><td><code>--text-4xl → --text-xs</code></td><td>Escala tipográfica fluida (clamp)</td></tr>
+            <tr><td><code>--section-y</code></td><td>Respiro vertical entre seções</td></tr>
+            <tr><td><code>--measure</code></td><td>Medida de leitura (65ch)</td></tr>
+            <tr><td><code>--radius-sm/md/lg</code></td><td>Raios de borda</td></tr>
+            <tr><td><code>--ease / --dur</code></td><td>Curva e duração de movimento</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER COMPARTILHADO ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Método HAG — página inicial">
+            <span class="brand__mark" aria-hidden="true">H</span>
+            <span class="brand__word">Método <strong>HAG</strong></span>
+          </a>
+          <p class="text-muted measure-narrow">Nutrologia e medicina do esporte. Atendimento em São Paulo e online.</p>
+          <ul class="footer-nav" style="margin-top:var(--space-md)">
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="metodo.html">Método</a></li>
+            <li><a href="acompanhamento.html">Acompanhamento</a></li>
+            <li><a href="atendimento.html">Atendimento</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="legal">
+          <p><strong>HENRIQUE ALVES GONZAGA LTDA</strong></p>
+          <p>CNPJ 59.088.764/0001-23</p>
+          <p>Responsável técnico: Dr. Henrique Alves Gonzaga — CRM/SP 226530</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> Henrique Alves Gonzaga LTDA. Todos os direitos reservados.</p>
+        <p><a href="privacidade.html">Política de Privacidade</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

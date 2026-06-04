@@ -72,9 +72,9 @@ python3 -m http.server 8000
       e `sitemap.xml` já apontam para `https://clinicahag.com`.
 - [x] **Contato**: CTAs em `contate.me/dr-henrique`; número `+55 11 97796-2914` exibido.
 - [x] **Sobre**: formação e aperfeiçoamento preenchidos.
-- [ ] **Contato** (`contato.html`): preencher o horário de atendimento da equipe.
-- [ ] **Privacidade** (`privacidade.html`): preencher o canal do encarregado (DPO) e revisar
-      com assessoria jurídica.
+- [x] **Contato**: horário de atendimento preenchido (seg. a sex. 9h às 20h, sáb. 9h às 17h).
+- [x] **Privacidade**: encarregado de dados (DPO) preenchido. Recomenda-se revisão por
+      assessoria jurídica antes da publicação definitiva.
 - [ ] **Imagem social** (opcional): adicionar `assets/img/og.jpg` (1200×630) e descomentar a
       metatag `og:image`.
 - [ ] **Fotos**: substituir os blocos `.placeholder` (estilo visor) por `<img loading="lazy">`

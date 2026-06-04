@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Ativa estados de animação antes do paint (evita flash); sem JS, conteúdo aparece normal -->
+  <script>document.documentElement.classList.add('js')</script>
   <title>Método HAG · Nutrologia e Medicina do Esporte</title>
   <meta name="description" content="Método HAG — acompanhamento médico em nutrologia e medicina do esporte com o Dr. Henrique Alves Gonzaga (CRM/SP 226530). Atendimento em São Paulo e online.">
   <link rel="canonical" href="https://clinicahag.com/">
@@ -21,9 +23,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..400;1,9..144,300..400&family=Hanken+Grotesk:wght@400..600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;600&family=Space+Grotesk:wght@300..700&display=swap">
 
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/hag.css">
 
   <script type="application/ld+json">
   {
@@ -50,8 +52,7 @@
   <header class="site-header">
     <div class="site-header__inner container">
       <a class="brand" href="index.html" aria-label="Método HAG — página inicial">
-        <span class="brand__mark" aria-hidden="true">H</span>
-        <span class="brand__word">Método <strong>HAG</strong></span>
+        <span class="brand__word">Método HAG<span class="brand__cursor" aria-hidden="true">_</span></span>
       </a>
       <nav class="nav" id="primary-nav" data-nav aria-label="Navegação principal">
         <ul class="nav__list">
@@ -76,18 +77,18 @@
   <main id="conteudo">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="section">
       <div class="container">
         <div class="split">
           <div class="stack">
-            <p class="eyebrow reveal" style="--i:0">Nutrologia · Medicina do esporte</p>
+            <p class="eyebrow eyebrow--mark reveal" style="--i:0">Nutrologia · Medicina do esporte</p>
             <h1 class="display reveal" style="--i:1">Cuidado médico que começa por <em>entender você</em>.</h1>
             <p class="lead reveal" style="--i:2">
               Sob a marca Método HAG, o Dr. Henrique Alves Gonzaga conduz o acompanhamento
               em nutrologia e medicina do esporte com avaliação ampla, conduta individual e
               continuidade. Atendimento em São Paulo e online.
             </p>
-            <div class="demo-row reveal" style="--i:3; display:flex; flex-wrap:wrap; gap:1rem; margin-top:.5rem">
+            <div class="reveal" style="--i:3; display:flex; flex-wrap:wrap; gap:1rem; margin-top:.5rem">
               <!-- TODO: trocar 5511000000000 pelo número real da secretaria -->
               <a class="btn btn--primary btn--lg" href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20do%20M%C3%A9todo%20HAG." target="_blank" rel="noopener">
                 Falar com a equipe
@@ -96,76 +97,92 @@
               <a class="btn btn--ghost btn--lg" href="metodo.html">Conhecer o Método</a>
             </div>
           </div>
-          <figure class="placeholder reveal" style="--i:2">
-            <span class="placeholder__label">Retrato do Dr. Henrique — a inserir</span>
-          </figure>
+
+          <div class="reveal" style="--i:2">
+            <figure class="frame" data-parallax="0.06">
+              <span class="frame__hud" aria-hidden="true"></span>
+              <span class="tag frame__tag" aria-hidden="true">HAG · 01</span>
+              <!-- Substituir o .placeholder por <img class="frame__media" src="assets/img/retrato.jpg" alt="Retrato do Dr. Henrique Alves Gonzaga" loading="lazy" width="800" height="1000"> quando houver foto -->
+              <div class="frame__media placeholder" role="img" aria-label="Retrato do Dr. Henrique — a inserir">
+                <span class="placeholder__label">Retrato do Dr. Henrique — a inserir</span>
+              </div>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- O MÉTODO EM UMA FRASE -->
-    <section class="section section--alt">
+    <section class="section section--divide">
       <div class="container container--narrow">
-        <p class="eyebrow">O Método HAG</p>
-        <p class="h2" style="margin-top:var(--space-sm); font-family:var(--font-display); font-weight:var(--weight-light)">
+        <p class="eyebrow eyebrow--mark reveal" style="--i:0">O Método HAG</p>
+        <p class="h2 reveal" style="--i:1; font-weight:var(--w-light); margin-top:var(--space-md)">
           Em uma frase: o Método HAG é a forma como organizamos o acompanhamento —
           avaliação cuidadosa, decisão individual e presença ao longo do tempo.
         </p>
-        <p style="margin-top:var(--space-md)"><a class="link-arrow" href="metodo.html">Entender a filosofia</a></p>
+        <p class="reveal" style="--i:2; margin-top:var(--space-md)"><a class="link-arrow" href="metodo.html">Entender a filosofia</a></p>
       </div>
     </section>
 
     <!-- TRÊS PRINCÍPIOS -->
-    <section class="section">
+    <section class="section section--divide">
       <div class="container">
-        <p class="eyebrow">Como funciona</p>
-        <h2 class="h2" style="margin-top:var(--space-sm); margin-bottom:var(--space-xl)">Um acompanhamento, três princípios</h2>
+        <p class="eyebrow eyebrow--mark reveal" style="--i:0">Como funciona</p>
+        <h2 class="h2 reveal" style="--i:1; margin-top:var(--space-sm); margin-bottom:var(--space-xl)">Um acompanhamento, três princípios</h2>
         <div class="grid grid--3">
-          <article class="card">
-            <span class="card__index">01</span>
+          <article class="card reveal" style="--i:0">
+            <span class="card__index">HAG · 01</span>
             <h3 class="card__title">Avaliação ampla</h3>
             <p class="card__body">História clínica, hábitos, objetivos e contexto analisados com profundidade antes de qualquer conduta.</p>
           </article>
-          <article class="card">
-            <span class="card__index">02</span>
+          <article class="card reveal" style="--i:1">
+            <span class="card__index">HAG · 02</span>
             <h3 class="card__title">Conduta individual</h3>
             <p class="card__body">Cada pessoa é única. As decisões médicas partem da sua realidade — sem fórmulas prontas.</p>
           </article>
-          <article class="card">
-            <span class="card__index">03</span>
+          <article class="card reveal" style="--i:2">
+            <span class="card__index">HAG · 03</span>
             <h3 class="card__title">Continuidade</h3>
             <p class="card__body">Reavaliações periódicas mantêm o cuidado ajustado à medida que o tempo e os objetivos mudam.</p>
           </article>
         </div>
-        <p style="margin-top:var(--space-lg)"><a class="link-arrow" href="acompanhamento.html">Conhecer o acompanhamento</a></p>
+        <p class="reveal" style="--i:1; margin-top:var(--space-lg)"><a class="link-arrow" href="acompanhamento.html">Conhecer o acompanhamento</a></p>
       </div>
     </section>
 
     <!-- ATENDIMENTO -->
-    <section class="section section--alt">
+    <section class="section section--divide">
       <div class="container">
         <div class="split split--media-first">
-          <figure class="placeholder placeholder--wide">
-            <span class="placeholder__label">Ambiente de atendimento — a inserir</span>
-          </figure>
+          <div class="reveal" style="--i:0">
+            <figure class="frame frame--wide" data-parallax="0.05">
+              <span class="frame__hud" aria-hidden="true"></span>
+              <span class="tag frame__tag" aria-hidden="true">HAG · 02</span>
+              <!-- Substituir o .placeholder por <img class="frame__media" ...> quando houver foto -->
+              <div class="frame__media placeholder placeholder--wide" role="img" aria-label="Ambiente de atendimento — a inserir">
+                <span class="placeholder__label">Ambiente de atendimento — a inserir</span>
+              </div>
+            </figure>
+          </div>
           <div class="stack">
-            <p class="eyebrow">Onde</p>
-            <h2 class="h2">Tatuapé, Pinheiros e online</h2>
-            <p class="measure text-muted">O atendimento presencial acontece em dois pontos de São Paulo — Tatuapé e Pinheiros — e também por telemedicina, para quem está distante ou prefere a consulta a distância.</p>
-            <p><a class="link-arrow" href="atendimento.html">Ver como é o atendimento</a></p>
+            <p class="eyebrow eyebrow--mark reveal" style="--i:0">Onde</p>
+            <h2 class="h2 reveal" style="--i:1">Tatuapé, Pinheiros e online</h2>
+            <p class="measure text-2 reveal" style="--i:2">O atendimento presencial acontece em dois pontos de São Paulo — Tatuapé e Pinheiros — e também por telemedicina, para quem está distante ou prefere a consulta a distância.</p>
+            <p class="reveal" style="--i:3"><a class="link-arrow" href="atendimento.html">Ver como é o atendimento</a></p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="section">
+    <section class="section section--divide">
       <div class="container container--narrow text-center mx-auto">
-        <h2 class="h2">Vamos conversar?</h2>
-        <p class="lead text-muted mx-auto" style="margin-top:var(--space-sm)">
+        <p class="eyebrow eyebrow--mark reveal" style="--i:0; justify-content:center">Próximo passo</p>
+        <h2 class="h2 reveal" style="--i:1; margin-top:var(--space-sm)">Vamos conversar?</h2>
+        <p class="lead text-2 mx-auto reveal" style="--i:2; margin-top:var(--space-sm)">
           A nossa equipe ajuda você a agendar e a tirar dúvidas. O contato é sempre pela secretaria.
         </p>
-        <p style="margin-top:var(--space-lg)">
+        <p class="reveal" style="--i:3; margin-top:var(--space-lg)">
           <!-- TODO: trocar 5511000000000 pelo número real da secretaria -->
           <a class="btn btn--primary btn--lg" href="https://wa.me/5511000000000?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20do%20M%C3%A9todo%20HAG." target="_blank" rel="noopener">
             Falar com a equipe
@@ -182,10 +199,9 @@
       <div class="site-footer__grid">
         <div>
           <a class="brand" href="index.html" aria-label="Método HAG — página inicial">
-            <span class="brand__mark" aria-hidden="true">H</span>
-            <span class="brand__word">Método <strong>HAG</strong></span>
+            <span class="brand__word">Método HAG<span class="brand__cursor" aria-hidden="true">_</span></span>
           </a>
-          <p class="text-muted measure-narrow">Nutrologia e medicina do esporte. Atendimento em São Paulo e online.</p>
+          <p class="text-muted measure-narrow" style="margin-top:var(--space-sm)">Nutrologia e medicina do esporte. Atendimento em São Paulo e online.</p>
           <ul class="footer-nav" style="margin-top:var(--space-md)">
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="metodo.html">Método</a></li>
@@ -201,12 +217,12 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span data-year>2026</span> Henrique Alves Gonzaga LTDA. Todos os direitos reservados.</p>
+        <p>© <span data-year>2026</span> Henrique Alves Gonzaga LTDA</p>
         <p><a href="privacidade.html">Política de Privacidade</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/hag.js" defer></script>
 </body>
 </html>

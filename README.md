@@ -1,11 +1,22 @@
-# Método HAG — site institucional
+# Método HAG
 
-Site institucional do consultório do Dr. Henrique Alves Gonzaga, médico nutrólogo e do
-esporte (CRM/SP 226530), sob a marca **Método HAG**.
+Site institucional do consultório do Dr. Henrique Alves Gonzaga, médico com atuação em
+nutrologia e medicina do esporte (CRM/SP 226530), sob a marca **Método HAG**.
 
 Stack: **HTML + CSS + JavaScript vanilla**, sem frameworks. Mobile first, foco em
 performance (meta Lighthouse 95+), acessibilidade e SEO básico. Publicação via **GitHub
 Pages** (o `index.html` fica na raiz).
+
+## Identidade visual (v2): luxo tech monocromático
+
+- Grafite `#1E2023` como único acento; fundos `#FAFAF8` / `#F0F0EC`; hairlines `#E7E6E2`.
+- Tipografia: **Space Grotesk** (display), **IBM Plex Sans** (corpo), **IBM Plex Mono**
+  (eyebrows, etiquetas, números).
+- Detalhes: marca `Método HAG_` com cursor, molduras de visor (cantos em L), etiquetas
+  `HAG · NN`, divisores hairline, camada gráfica hi-tech (campo de pontos no hero e
+  blueprint sutil em seções).
+- Movimento: revelação no scroll (IntersectionObserver), parallax leve no desktop, hover
+  refinado. Tudo em `transform`/`opacity` e respeitando `prefers-reduced-motion`.
 
 ## Estrutura
 
@@ -14,21 +25,30 @@ Pages** (o `index.html` fica na raiz).
 ├── index.html              Home
 ├── sobre.html              Sobre o Dr. Henrique
 ├── metodo.html             Método HAG (filosofia de acompanhamento)
-├── acompanhamento.html     Como funciona o acompanhamento (sem planos/preços)
+├── acompanhamento.html     Como funciona o acompanhamento (sem planos, sem preços)
 ├── atendimento.html        Tatuapé, Pinheiros e online (só bairros)
-├── contato.html            Falar com a equipe (WhatsApp)
+├── contato.html            Falar com a equipe (contate.me) + WhatsApp da equipe
 ├── privacidade.html        Política de Privacidade (LGPD)
-├── design-system.html      Styleguide visual — referência interna (noindex)
-├── favicon.svg             Monograma da marca
-├── robots.txt / sitemap.xml SEO
+├── design-system.html      Styleguide visual, referência interna (noindex)
+├── favicon.svg             Monograma da marca (grafite)
+├── robots.txt / sitemap.xml  SEO
 └── assets/
-    ├── css/styles.css      Design system compartilhado (tokens + componentes)
-    ├── js/main.js          Navegação mobile + ano do rodapé (mínimo)
+    ├── css/hag.css         Design system (tokens, componentes, camada gráfica)
+    ├── js/hag.js           Reveal no scroll, parallax, navegação mobile, ano
     └── img/                Imagens reais (quando houver)
 ```
 
-Header e footer são **compartilhados pelo design**: o markup se repete em cada página, mas
-todo o estilo e o comportamento vivem em `assets/css/styles.css` e `assets/js/main.js`.
+Header e footer são consistentes em todas as páginas: o markup se repete, mas todo o
+estilo e o comportamento vivem em `assets/css/hag.css` e `assets/js/hag.js`.
+
+## Regras de conteúdo
+
+- **Sem travessões (—)** como separador. Use vírgula, ponto ou ponto e vírgula.
+- **Contato**: todos os botões e CTAs de contato apontam para `https://contate.me/dr-henrique`.
+  Na página Contato também é exibido o WhatsApp da equipe: `+55 11 97796-2914`.
+- **Conformidade CFM**: sem promessa de resultado, cura ou garantia; sem antes e depois; sem
+  depoimento de resultado; sem preço. Tom técnico e sóbrio. Nenhuma imagem ou animação pode
+  sugerir resultado de paciente.
 
 ## Rodar localmente
 
@@ -41,33 +61,22 @@ python3 -m http.server 8000
 
 ## Publicar no GitHub Pages
 
-1. Settings → Pages → Build and deployment → **Deploy from a branch**.
-2. Branch: a branch publicada (ex.: `main`) · pasta `/ (root)`.
-3. Domínio personalizado (opcional): configure em Pages e adicione um arquivo `CNAME` na
-   raiz com o domínio. Ajuste então as URLs canônicas/OG (veja abaixo).
+1. Settings, Pages, Build and deployment, **Deploy from a branch**.
+2. Branch `main`, pasta `/ (root)`.
+3. Domínio personalizado (quando decidir ativar): configure em Pages e adicione um arquivo
+   `CNAME` na raiz com `clinicahag.com`, mais o apontamento de DNS.
 
-## ✅ Antes de publicar — o que preencher
+## Pendências (procure por `TODO` e `[PREENCHER:` )
 
-Procure por `TODO` e `[PREENCHER: ...]` no código. Os principais pontos:
-
-- [ ] **WhatsApp**: trocar o número placeholder `5511000000000` pelo número real da
-      secretaria em **todas** as páginas (busque por `wa.me/5511000000000`). Formato
-      internacional, só dígitos (ex.: `5511987654321`).
-- [x] **Domínio**: definido como `clinicahag.com` (apex, sem `www`). `canonical`, Open Graph,
-      `robots.txt` e `sitemap.xml` já apontam para `https://clinicahag.com`. Para servir nesse
-      domínio no GitHub Pages: configure o domínio personalizado em Settings → Pages e adicione
-      um arquivo `CNAME` na raiz com `clinicahag.com` (mais o apontamento de DNS).
-- [ ] **Sobre** (`sobre.html`): preencher formação e títulos **apenas com informações
-      verificadas** (graduação, nutrologia, medicina do esporte). Nada foi presumido.
-- [ ] **Contato** (`contato.html`): preencher o horário de atendimento da secretaria.
+- [x] **Domínio**: definido como `clinicahag.com` (apex). `canonical`, Open Graph, `robots.txt`
+      e `sitemap.xml` já apontam para `https://clinicahag.com`.
+- [x] **Contato**: CTAs em `contate.me/dr-henrique`; número `+55 11 97796-2914` exibido.
+- [x] **Sobre**: formação e aperfeiçoamento preenchidos.
+- [ ] **Contato** (`contato.html`): preencher o horário de atendimento da equipe.
 - [ ] **Privacidade** (`privacidade.html`): preencher o canal do encarregado (DPO) e revisar
       com assessoria jurídica.
 - [ ] **Imagem social** (opcional): adicionar `assets/img/og.jpg` (1200×630) e descomentar a
       metatag `og:image`.
-- [ ] **Fotos**: substituir os blocos `.placeholder` por `<img>` reais quando houver.
-
-## Conformidade (CFM)
-
-O conteúdo segue, por padrão: sem promessa de resultado/cura/garantia, sem antes-e-depois,
-sem depoimento de resultado, sem preço de procedimento. Tom técnico e sóbrio. Mantenha
-esse critério ao editar os textos.
+- [ ] **Fotos**: substituir os blocos `.placeholder` (estilo visor) por `<img loading="lazy">`
+      reais. O tratamento monocromático (dessaturação e contraste) já está no CSS; o grão fino
+      entra junto com as fotos.

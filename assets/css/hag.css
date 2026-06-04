@@ -554,3 +554,57 @@ strong, b { font-weight: var(--w-semi); }
   padding: 0.35rem 0 0.35rem 0.9rem; margin-block: 0.5rem;
   color: var(--muted); font-style: italic; font-size: var(--text-sm);
 }
+
+
+/* ------------------------------------------------------------------
+   13. CAMADA GRÁFICA HI-TECH (sóbria, CSS, monocromática)
+   Grade técnica + campo de pontos no hero; blueprint atrás de seções
+   selecionadas. Movimento muito lento; desligado em reduced-motion.
+   ------------------------------------------------------------------ */
+.hero-section { position: relative; overflow: hidden; }
+.hero-section > .container { position: relative; z-index: 1; }
+
+/* Campo de pontos + grade fina em grafite, com leve deriva */
+.techfield {
+  position: absolute; inset: -12%; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(30, 32, 35, 0.20) 1px, transparent 1.7px),
+    linear-gradient(rgba(30, 32, 35, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 32, 35, 0.045) 1px, transparent 1px);
+  background-size: 30px 30px, 30px 30px, 30px 30px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 72% 38%, #000 0%, rgba(0,0,0,0.35) 45%, transparent 72%);
+          mask-image: radial-gradient(ellipse 70% 70% at 72% 38%, #000 0%, rgba(0,0,0,0.35) 45%, transparent 72%);
+}
+.js .techfield { animation: techdrift 70s linear infinite alternate; }
+@keyframes techdrift {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-30px, -20px, 0); }
+}
+
+/* Blueprint sutil atrás de seções selecionadas */
+.blueprint { position: relative; }
+.blueprint > * { position: relative; z-index: 1; }
+.blueprint::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(30, 32, 35, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 32, 35, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+          mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+}
+
+/* Número de contato em mono */
+.contact-number {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.contact-number:hover { color: var(--black); }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .techfield { animation: none; }
+}

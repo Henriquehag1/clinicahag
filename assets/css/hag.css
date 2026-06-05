@@ -547,7 +547,7 @@ strong, b { font-weight: var(--w-semi); }
   color: var(--ink-2); text-decoration: none;
 }
 .footer-nav a:hover { color: var(--ink); }
-.legal { color: var(--muted); line-height: 1.8; }
+.legal { color: var(--ink-2); line-height: 1.7; font-size: var(--text-base); }
 .legal strong { color: var(--ink); font-weight: var(--w-med); }
 .footer-bottom {
   margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--hairline);

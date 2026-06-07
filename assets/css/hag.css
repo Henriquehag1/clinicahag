@@ -634,3 +634,33 @@ strong, b { font-weight: var(--w-semi); }
 @media (prefers-reduced-motion: reduce) {
   .js .techfield { animation: none; }
 }
+
+/* ------------------------------------------------------------------
+   14. FAIXA DE IMAGEM EM LARGURA TOTAL (full-bleed)
+   Momento de escala. A imagem sangra ate as bordas da tela.
+   Reusa o token --gray e o grao para coerencia com os visores.
+   ------------------------------------------------------------------ */
+.band {
+  position: relative;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  height: clamp(22rem, 56vh, 40rem);
+  overflow: hidden;
+  background: var(--surface);
+}
+.band__media {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(var(--gray)) contrast(1.04);
+  transform: scale(1.02);
+  transition: transform var(--dur-slow) var(--ease), filter var(--dur-slow) var(--ease);
+}
+.band:hover .band__media {
+  transform: scale(1.05);
+  filter: grayscale(calc(var(--gray) - 0.12)) contrast(1.05);
+}
+.band .frame__grain { z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .band__media, .band:hover .band__media { transition: none !important; transform: none !important; }
+}

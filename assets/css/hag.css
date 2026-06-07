@@ -324,6 +324,9 @@ strong, b { font-weight: var(--w-semi); }
 .frame--wide  { --ratio: 16 / 10; }
 .frame--square { --ratio: 1 / 1; }
 
+/* Retrato do Dr.: rosto com mais calor que o ambiente, vira o ponto humano. */
+.frame--portrait { --gray: 0.2; }
+
 
 /* ------------------------------------------------------------------
    6. MOVIMENTO

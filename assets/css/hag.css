@@ -661,6 +661,15 @@ strong, b { font-weight: var(--w-semi); }
   filter: grayscale(calc(var(--gray) - 0.12)) contrast(1.05);
 }
 .band .frame__grain { z-index: 1; }
+.band__tag {
+  position: absolute; left: var(--gutter); bottom: 1rem; z-index: 2;
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--bg);
+  background: rgba(30, 32, 35, 0.55);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  padding: 0.4rem 0.75rem;
+}
 @media (prefers-reduced-motion: reduce) {
   .band__media, .band:hover .band__media { transition: none !important; transform: none !important; }
 }

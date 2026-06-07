@@ -283,6 +283,16 @@ strong, b { font-weight: var(--w-semi); }
 .frame__hud::before, .frame__hud::after { content: ""; position: absolute; top: 0; width: 22px; height: 22px; }
 .frame__hud::before { left: 0;  border-left: 1px solid var(--ink); border-top: 1px solid var(--ink); }
 .frame__hud::after  { right: 0; border-right: 1px solid var(--ink); border-top: 1px solid var(--ink); }
+/* microinteração de hover: cantos em L "abrem" ~2px para fora, como foco de visor.
+   Só transform nos pseudo-elementos (não conflita com parallax/reveal no figure). */
+.frame::before, .frame::after,
+.frame__hud::before, .frame__hud::after {
+  transition: transform var(--dur) var(--ease);
+}
+.frame:hover::before              { transform: translate(-2px,  2px); } /* inf. esquerdo */
+.frame:hover::after               { transform: translate( 2px,  2px); } /* inf. direito  */
+.frame:hover .frame__hud::before  { transform: translate(-2px, -2px); } /* sup. esquerdo */
+.frame:hover .frame__hud::after   { transform: translate( 2px, -2px); } /* sup. direito  */
 /* etiqueta mono no canto do visor */
 .frame__tag {
   position: absolute; left: 18px; top: 16px; z-index: 3;
@@ -343,6 +353,9 @@ strong, b { font-weight: var(--w-semi); }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .frame__media, .frame:hover img.frame__media { transition: none !important; transform: none !important; }
+  .frame::before, .frame::after, .frame__hud::before, .frame__hud::after,
+  .frame:hover::before, .frame:hover::after,
+  .frame:hover .frame__hud::before, .frame:hover .frame__hud::after { transition: none !important; transform: none !important; }
   .brand__cursor { animation: none; }
   .js [data-parallax] { transform: none !important; }
 }

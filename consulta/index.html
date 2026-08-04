@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consulta · Método HAG</title>
+<meta name="description" content="Material de apresentacao da consulta do Metodo HAG: o que a consulta avalia, como e conduzida e o que vem depois.">
+<!-- Pagina de material enviado a quem ja entrou em contato. Nao integra a navegacao
+     publica do site nem deve ser indexada. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grafite:#1E2023;
+    --papel:#FAFAF8;
+    --papel2:#F0F0EC;
+    --hairline:#E7E6E2;
+    --texto:#1E2023;
+    --texto2:#5A5F66;
+    --display:"Space Grotesk",Georgia,serif;
+    --corpo:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--papel);
+    color:var(--texto);
+    font-family:var(--corpo);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--hairline)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .marca{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto);text-decoration:none}
+  .marca span{opacity:.45}
+  .voltar{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--texto2);text-decoration:none}
+  .voltar:hover{color:var(--texto)}
+
+  .hero{padding:64px 0 40px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--texto2);margin:0 0 18px}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,7vw,64px);line-height:1.04;letter-spacing:-.02em;margin:0 0 20px}
+  .lead{font-size:clamp(16px,2.2vw,19px);color:var(--texto2);max-width:56ch;margin:0}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:40px;padding:8px 0 72px}
+  @media(min-width:880px){.grid{grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}}
+
+  .visor{position:relative;background:var(--papel2);border:1px solid var(--hairline);padding:14px}
+  .visor::before,.visor::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--grafite);opacity:.25}
+  .visor::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .visor::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+  .visor img{display:block;width:100%;height:auto}
+  .visor .etq{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--texto2);padding-top:10px}
+
+  .sumario{margin:0 0 28px;padding:0;list-style:none;border-top:1px solid var(--hairline)}
+  .sumario li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--hairline);font-size:15px}
+  .sumario .n{font-family:var(--mono);font-size:11px;color:var(--texto2);padding-top:3px;min-width:26px}
+
+  .acoes{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+  @media(min-width:520px){.acoes{flex-direction:row}}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    padding:16px 24px;text-decoration:none;border:1px solid var(--grafite);
+    transition:background .18s ease,color .18s ease;
+  }
+  .btn-primario{background:var(--grafite);color:var(--papel)}
+  .btn-primario:hover{background:transparent;color:var(--grafite)}
+  .btn-secundario{background:transparent;color:var(--grafite)}
+  .btn-secundario:hover{background:var(--grafite);color:var(--papel)}
+
+  .nota{font-size:13.5px;color:var(--texto2);border-left:1px solid var(--hairline);padding-left:16px}
+
+  footer{border-top:1px solid var(--hairline);padding:28px 0 44px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+  footer p{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--texto2)}
+
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="/">Método HAG<span>_</span></a>
+    <a class="voltar" href="/">Site</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <p class="eyebrow">HAG · Material da consulta</p>
+    <h1>Consulta</h1>
+    <p class="lead">O que a consulta avalia, como ela é conduzida e o que vem depois. Oito páginas, leitura de poucos minutos, para você chegar à conversa com a equipe já sabendo o que esperar.</p>
+  </section>
+
+  <section class="wrap grid">
+    <div class="visor">
+      <img src="capa.jpg" width="899" height="1124" alt="Capa do material da consulta do Método HAG" loading="eager">
+      <div class="etq">Método HAG · Consulta · 08 páginas</div>
+    </div>
+
+    <div>
+      <ul class="sumario">
+        <li><span class="n">01</span><span>O que é a consulta</span></li>
+        <li><span class="n">02</span><span>As três leituras do seu corpo</span></li>
+        <li><span class="n">03</span><span>O que muda depois da consulta</span></li>
+        <li><span class="n">04</span><span>Quem conduz o processo</span></li>
+        <li><span class="n">05</span><span>Investimento e condições</span></li>
+        <li><span class="n">06</span><span>Os níveis de acompanhamento</span></li>
+        <li><span class="n">07</span><span>Para quem a consulta é indicada</span></li>
+      </ul>
+
+      <div class="acoes">
+        <a class="btn btn-primario" href="consulta-metodo-hag.pdf" target="_blank" rel="noopener">Abrir o material</a>
+        <a class="btn btn-secundario" href="https://contate.me/dr-henrique" target="_blank" rel="noopener">Falar com a equipe</a>
+      </div>
+
+      <p class="nota">A definição do nível de acompanhamento é feita pelo Dr. Henrique após a avaliação clínica. O agendamento é confirmado pela equipe.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Dr. Henrique Alves Gonzaga · CRM/SP 226530</p>
+    <p>Método HAG · São Paulo</p>
+  </div>
+</footer>
+
+</body>
+</html>

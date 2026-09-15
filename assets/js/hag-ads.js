@@ -45,10 +45,67 @@
     return /(?:^|\/\/)(?:api\.whatsapp\.com|wa\.me|web\.whatsapp\.com)/.test(href || '');
   }
 
+  /* HAG_ORIGEM_ANUNCIO_v1 (15/09/2026)
+     PORQUE: quem clica no anuncio do Google cai no site, e o botao do site
+     manda a frase "vim pelo site". O lead pago chegava no WhatsApp com cara
+     de trafego organico, e a campanha aparecia com menos resultado do que
+     tem, justamente agora que ela gasta todo dia util.
+     O Google marca a visita vinda de anuncio com gclid, gbraid ou wbraid na
+     URL, quando a marcacao automatica esta ligada na conta. Guardamos isso
+     por 30 dias, a mesma janela de atribuicao da campanha, e trocamos apenas
+     a frase generica do site. Frases de tema, do Instagram e do checklist
+     ficam como estao, porque dizem mais do que "veio do Google".
+     Sem cookie, sem dado da pessoa: so a marca de que a visita veio de
+     anuncio, no proprio navegador dela. */
+  var CHAVE_ADS = 'hag_origem_anuncio';
+  var JANELA_ADS = 30 * 24 * 60 * 60 * 1000;
+  var FRASE_SITE = encodeURIComponent('vim pelo site');
+  var FRASE_ADS = encodeURIComponent('vim do an\u00fancio do Google');
+
+  function guardaSeVeioDeAnuncio() {
+    try {
+      var q = new URLSearchParams(window.location.search);
+      var pago = q.get('gclid') || q.get('gbraid') || q.get('wbraid') ||
+        (q.get('utm_source') === 'google' && q.get('utm_medium') === 'cpc');
+      if (pago) window.localStorage.setItem(CHAVE_ADS, String(Date.now()));
+    } catch (e) { /* navegador sem armazenamento: segue sem marcar */ }
+  }
+
+  function veioDeAnuncio() {
+    try {
+      var t = parseInt(window.localStorage.getItem(CHAVE_ADS), 10);
+      return !!t && (Date.now() - t) < JANELA_ADS;
+    } catch (e) { return false; }
+  }
+
+  function trocaFrase(link) {
+    if (!link || !ehWhatsApp(link.href)) return;
+    var href = link.getAttribute('href') || '';
+    if (href.indexOf(FRASE_SITE) === -1) return;
+    link.setAttribute('href', href.replace(FRASE_SITE, FRASE_ADS));
+  }
+
+  function marcaLinksDoSite() {
+    if (!veioDeAnuncio()) return;
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) trocaFrase(links[i]);
+  }
+
+  guardaSeVeioDeAnuncio();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', marcaLinksDoSite);
+  } else {
+    marcaLinksDoSite();
+  }
+
   document.addEventListener('click', function (ev) {
     var alvo = ev.target;
     var link = alvo && alvo.closest ? alvo.closest('a') : null;
     if (!link || !ehWhatsApp(link.href)) return;
+    /* HAG_ORIGEM_ANUNCIO_v1: rede de seguranca, caso o link tenha entrado na
+       pagina depois da varredura inicial. Roda na fase de captura, antes da
+       navegacao, entao o href trocado e o que o navegador usa. */
+    if (veioDeAnuncio()) trocaFrase(link);
     try {
       window.gtag('event', 'conversion', { send_to: CONVERSAO });
     } catch (e) { /* silencioso, nunca atrapalha o clique */ }

@@ -47,8 +47,15 @@ estilo e o comportamento vivem em `assets/css/hag.css` e `assets/js/hag.js`.
 - **Contato**: todos os botões e CTAs de contato apontam para `https://contate.me/dr-henrique`.
   Na página Contato também é exibido o WhatsApp da equipe: `+55 11 97796-2914`.
 - **Conformidade CFM**: sem promessa de resultado, cura ou garantia; sem antes e depois; sem
-  depoimento de resultado; sem preço. Tom técnico e sóbrio. Nenhuma imagem ou animação pode
-  sugerir resultado de paciente.
+  depoimento de resultado. Tom técnico e sóbrio. Nenhuma imagem ou animação pode
+  sugerir resultado de paciente. A norma vigente é a Resolução CFM 2.336/2023; a Resolução
+  CFM 1.974/2011, que embasava a regra antiga, está revogada.
+- **Preço**: informar o valor da consulta e a forma de pagamento é permitido pela Resolução
+  CFM 2.336/2023, art. 9º, incisos VI, VII e VIII. O que continua vedado é desconto
+  promocional e qualquer condição atrelada a venda casada. As páginas HTML deste site não
+  exibem preço por opção editorial, não por proibição. O valor vigente é publicado apenas no
+  material `consulta/consulta-metodo-hag.pdf`, que cumpre o CDC exibindo o total ao lado do
+  valor parcelado.
 
 ## Rodar localmente
 

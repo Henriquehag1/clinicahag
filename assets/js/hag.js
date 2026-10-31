@@ -86,3 +86,47 @@
     update();
   }
 })();
+
+/* HAG_WHATS_FIXO_v1 (31/10/2026)
+   PORQUE: no celular o botão "Falar com a equipe" some quando a pessoa rola a
+   página, e o menu fica fechado atrás do ícone. Um botão fixo no rodapé da
+   tela, só no celular, aparece depois que o primeiro botão sai de vista.
+   Ele reusa o link de WhatsApp da própria página, então a frase de origem
+   ("vim do conteúdo sobre...") continua a mesma e a medição de conversão
+   (hag-ads.js) e a do HAG OS (hag-medida.js) contam o clique normalmente. */
+(function () {
+  "use strict";
+  if (document.querySelector(".wa-fixo") || document.body.hasAttribute("data-sem-wa-fixo")) return;
+  var base = document.querySelector("main a[href*='wa.me']") || document.querySelector("a[href*='wa.me']");
+  if (!base) return;
+  var a = document.createElement("a");
+  a.className = "wa-fixo";
+  a.href = base.getAttribute("href");
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.setAttribute("aria-label", "Falar com a equipe pelo WhatsApp");
+  a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg><span>Falar com a equipe</span>';
+  document.body.appendChild(a);
+  document.body.classList.add("tem-wa-fixo");
+
+  /* Aparece depois de rolar e some enquanto outro botão de WhatsApp da
+     página estiver à vista, para nunca haver dois iguais na tela. */
+  var visiveis = 0;
+  var atualiza = function () {
+    a.classList.toggle("is-on", visiveis === 0 && (window.scrollY || 0) > (window.innerHeight || 600) * 0.6);
+  };
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !e.target.__hagVis) { e.target.__hagVis = true; visiveis++; }
+        else if (!e.isIntersecting && e.target.__hagVis) { e.target.__hagVis = false; visiveis--; }
+      });
+      atualiza();
+    }, { rootMargin: "-90px 0px 0px 0px" });
+    Array.prototype.forEach.call(document.querySelectorAll("a[href*='wa.me']"), function (l) {
+      if (l !== a && !l.closest("header")) io.observe(l);
+    });
+  }
+  window.addEventListener("scroll", atualiza, { passive: true });
+  atualiza();
+})();

@@ -1,49 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://clinicahag.com/</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://clinicahag.com/sobre.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://clinicahag.com/metodo.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://clinicahag.com/acompanhamento.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://clinicahag.com/atendimento.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://clinicahag.com/contato.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://clinicahag.com/privacidade.html</loc>
-    <lastmod>2026-06-04</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://clinicahag.com/emagrecimento.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clinicahag.com/bariatrica.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <priority>0.9</priority>
   </url>
-  <url><loc>https://clinicahag.com/checklist</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://clinicahag.com/checklist.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/comer-fora.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/contato.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/emagrecimento.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/forca.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/metodo.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/preparo.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/privacidade.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/saida-caneta.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://clinicahag.com/sobre.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>

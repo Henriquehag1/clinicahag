@@ -25,6 +25,14 @@
   window.gtag('js', new Date());
   window.gtag('config', TAG);
 
+  /* HAG_GA4_v1 (31/10/2026): Google Analytics 4 do clinicahag.com, criado pelo Dr. na conta
+     drhenrique@clinicahag.com. Sinais do Google e personalizacao de anuncios desligados no
+     GA4: ele mede visitas e origem; o remarketing continua so na tag do Ads e no pixel. */
+  window.gtag('config', 'G-39M8CJHCQH', {
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
+
   /* Pixel da Meta, codigo base oficial. */
   (function (f, b, e, v, n, t, s2) {
     if (f.fbq) return;
@@ -108,6 +116,7 @@
     if (veioDeAnuncio()) trocaFrase(link);
     try {
       window.gtag('event', 'conversion', { send_to: CONVERSAO });
+      window.gtag('event', 'generate_lead', { send_to: 'G-39M8CJHCQH', metodo: 'whatsapp' });
     } catch (e) { /* silencioso, nunca atrapalha o clique */ }
     try {
       window.fbq('track', 'Contact');

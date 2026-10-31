@@ -30,22 +30,109 @@
   <link rel="stylesheet" href="assets/css/hag.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    "name": "Henrique Alves Gonzaga",
-    "honorificPrefix": "Dr.",
-    "identifier": "CRM/SP 226530",
-    "knowsAbout": ["Cuidado médico individual", "Avaliação clínica ampla", "Acompanhamento contínuo"],
-    "areaServed": "São Paulo, SP",
-    "url": "https://clinicahag.com/",
-    "availableLanguage": "pt-BR",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Henrique Alves Gonzaga LTDA",
-      "identifier": "CNPJ 59.088.764/0001-23"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://clinicahag.com/#clinica",
+      "name": "Clínica HAG · Método HAG",
+      "legalName": "Henrique Alves Gonzaga LTDA",
+      "identifier": "CNPJ 59.088.764/0001-23",
+      "url": "https://clinicahag.com/",
+      "image": "https://clinicahag.com/assets/img/og.jpg",
+      "telephone": "+55 11 97796-2914",
+      "sameAs": [
+        "https://www.instagram.com/drhenriquealvesg/"
+      ],
+      "isAcceptingNewPatients": true,
+      "areaServed": {
+        "@type": "City",
+        "name": "São Paulo"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "agendamento",
+        "telephone": "+55 11 97796-2914",
+        "availableLanguage": "pt-BR",
+        "hoursAvailable": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      "department": [
+        {
+          "@type": "MedicalClinic",
+          "@id": "https://clinicahag.com/#tatuape",
+          "name": "Clínica HAG · Tatuapé",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "R. Vilela, 665, 8º andar",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          },
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=R.+Vilela%2C+665%2C+Tatuapé%2C+São+Paulo%2C+SP",
+          "telephone": "+55 11 97796-2914"
+        },
+        {
+          "@type": "MedicalClinic",
+          "@id": "https://clinicahag.com/#pinheiros",
+          "name": "Clínica HAG · Pinheiros",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Brigadeiro Faria Lima, 1461, 6º andar",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          },
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Brigadeiro+Faria+Lima%2C+1461%2C+Pinheiros%2C+São+Paulo%2C+SP",
+          "telephone": "+55 11 97796-2914"
+        }
+      ],
+      "founder": {
+        "@id": "https://clinicahag.com/#dr"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://clinicahag.com/#dr",
+      "name": "Henrique Alves Gonzaga",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Médico",
+      "identifier": "CRM/SP 226530",
+      "image": "https://clinicahag.com/assets/img/henrique-sobre.jpg",
+      "url": "https://clinicahag.com/sobre.html",
+      "sameAs": [
+        "https://www.instagram.com/drhenriquealvesg/"
+      ],
+      "knowsAbout": [
+        "Cuidado médico individual",
+        "Avaliação clínica ampla",
+        "Acompanhamento contínuo"
+      ],
+      "worksFor": {
+        "@id": "https://clinicahag.com/#clinica"
+      }
     }
-  }
+  ]
+}
   </script>
 </head>
 <body>
@@ -229,5 +316,6 @@
 
   <script src="assets/js/hag.js" defer></script>
   <script src="/assets/js/hag-ads.js" defer></script>
+  <script src="/assets/js/hag-medida.js" defer></script>
 </body>
 </html>

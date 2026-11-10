@@ -727,3 +727,45 @@ a.card.leia__item { display: block; text-decoration: none; color: inherit; }
   text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 2px;
 }
 .como-chegar:hover { border-color: var(--ink); }
+
+
+/* =====================================================================
+   HAG_SITE_MARCA_2026_v1 (10/11/2026) · marca nova aprovada pelo Dr. Henrique
+   Henrique Alves · Medicina sob medida. Couro e linho, Bodoni Moda, Hanken Grotesk, Jost.
+   Sistema completo: artifact "Henrique Alves · Sistema de Marca". Este bloco só
+   redefine tokens e poucos componentes; o resto do Design System v2 continua valendo.
+   ===================================================================== */
+:root {
+  --bg:        #F7F2EA; /* linho claro */
+  --surface:   #EEE7DC; /* linho */
+  --ink:       #221A16; /* tinta */
+  --ink-2:     #4A3F36;
+  --muted:     #7E7064;
+  --hairline:  #E2D8CA;
+  --black:     #1A1411; /* ébano */
+  --acento:    #8C4F2B; /* conhaque */
+  --camurca:   #B98A5E;
+  --chocolate: #33251E;
+  --bg-blur:   rgba(247, 242, 234, 0.82);
+  --on-ink:    #EEE7DC;
+  --font-display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
+  --font-body:    "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "Jost", "Futura", "Helvetica Neue", Arial, sans-serif;
+  --leading-tight: 1.06;
+}
+h1, h2, h3, h4, .display { font-weight: 400; letter-spacing: 0; }
+.display { letter-spacing: -0.005em; }
+.display em, h1 em, h2 em, h3 em { font-style: italic; font-weight: 400; color: var(--acento); }
+::selection { background: var(--acento); color: #F7F2EA; }
+:focus-visible { outline-color: var(--acento); }
+.btn--primary { background: var(--chocolate); border-color: var(--chocolate); color: var(--on-ink); }
+.btn--primary:hover { background: var(--black); border-color: var(--black); }
+/* fotos: em vez de cinza, um calor leve de couro */
+.frame img.frame__media { filter: sepia(.14) saturate(.88) contrast(1.03); }
+.frame:hover img.frame__media { filter: sepia(.08) saturate(.95) contrast(1.04); }
+/* marca: monograma HA + nome */
+.brand { align-items: center; gap: .6rem; }
+.brand__mono { height: 1.75rem; width: auto; color: var(--acento); flex: none; }
+.brand__word { font-family: var(--font-display); font-weight: 400; letter-spacing: .14em; text-transform: uppercase; font-size: .98rem; }
+.brand__cursor { display: none; }
+.site-footer .brand__mono { height: 2.2rem; }

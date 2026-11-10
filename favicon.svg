@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Método HAG">
-  <rect width="64" height="64" rx="8" fill="#1E2023"/>
-  <g fill="#FAFAF8">
-    <rect x="18" y="16" width="6" height="32"/>
-    <rect x="40" y="16" width="6" height="32"/>
-    <rect x="18" y="29" width="28" height="6"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Henrique Alves"><rect width="64" height="64" rx="6" fill="#33251E"/><svg x="9" y="13" width="46" height="38" viewBox="-15.5 -4.5 1144.0 844.5"><path d="M741.0 50.0V62.5H651.0V787.5H741.0V800.0H442.0V787.5H539.5V436.5H226.5V787.5H323.5V800.0H24.5V787.5H114.0V62.5H24.5V50.0H323.5V62.5H226.5V423.5H539.5V62.5H442.0V50.0Z M456.0 800.0 897.0 35.5H923.5L1018.5 800.0H896.5L832.5 171.0L470.0 800.0ZM374.5 800.0V787.5H594.5V800.0ZM781.5 800.0V787.5H1088.5V800.0ZM605.0 561.5V549.0H934.0V561.5Z" fill="#B98A5E"/></svg></svg>

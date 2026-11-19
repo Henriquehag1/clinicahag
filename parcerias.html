@@ -53,6 +53,23 @@
   .pc-temas li{padding:.35rem 0;font-size:.95rem}
   .pc-cab{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2rem}
   .pc-cab p{max-width:28rem;color:var(--muted);margin:0}
+  .pc-alt{text-align:center;margin-top:1.6rem;color:var(--muted)}
+  /* HAG_SITE_PEDIDOS_PROFISSIONAIS_v1 */
+  .pp-abas{display:inline-flex;gap:0;margin-top:.5rem;border:1px solid var(--hairline)}
+  .pp-aba{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:.9rem 1.3rem;border:0;background:transparent;color:var(--ink);cursor:pointer}
+  .pp-aba[aria-selected="true"]{background:var(--chocolate,#33251E);color:var(--on-ink,#EEE7DC)}
+  .pp-form{margin-top:2rem}
+  .pp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.25rem;margin-bottom:1.5rem}
+  .pp-grid label{display:flex;flex-direction:column;gap:.4rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .pp-grid input,.pp-grid select,.pp-grid textarea{font:inherit;font-family:var(--font-body);font-size:1rem;letter-spacing:0;text-transform:none;color:var(--ink);background:#fff;border:1px solid var(--hairline);border-radius:0;padding:.75rem .85rem;width:100%;box-sizing:border-box}
+  .pp-grid input:focus,.pp-grid select:focus,.pp-grid textarea:focus{outline:2px solid var(--acento);outline-offset:0;border-color:var(--acento)}
+  .pp-larga{grid-column:1/-1}
+  .pp-check{flex-direction:row!important;align-items:flex-start;gap:.7rem!important;font-family:var(--font-body)!important;font-size:.95rem!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important}
+  .pp-check input{width:auto!important;margin-top:.25rem}
+  .pp-mel{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .pp-aviso{margin-top:1rem;color:#a3392f;font-size:.95rem}
+  .pp-ok{margin-top:2rem;padding:2rem;background:var(--surface);text-align:center}
+  @media (max-width:640px){.pp-grid{grid-template-columns:1fr}.pp-abas{display:flex}.pp-aba{flex:1;padding:.9rem .6rem}}
   .pc-fim{text-align:center}
   .pc-fim p{max-width:34rem;margin:1rem auto 1.8rem;color:var(--muted)}
   @media (max-width:860px){.pc-hero,.pc-passos,.pc-oferta,.pc-sinais{grid-template-columns:1fr}.pc-grid4{grid-template-columns:1fr 1fr}.pc-grid4>div:nth-child(2){border-right:0}.pc-grid4>div:nth-child(-n+2){border-bottom:1px solid var(--hairline)}.pc-cab{display:block}.pc-cab p{margin-top:.6rem}.pc-resumo{margin-right:0}}
@@ -95,7 +112,7 @@
         <p class="lead">Acompanho adultos que querem emagrecer sem perder músculo, com ou sem caneta, e cuidar da saúde metabólica. Quando o seu aluno precisa de avaliação médica, eu examino, conduzo o tratamento e devolvo para você com um relatório.</p>
         <div class="pc-botoes">
           <a class="btn btn--primary" href="https://wa.me/5511977962914?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20para%20profissionais%20e%20quero%20conversar%20sobre%20parceria" target="_blank" rel="noopener">Falar sobre parceria</a>
-          <a class="btn btn--ghost" href="https://wa.me/5511977962914?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20para%20profissionais%20e%20quero%20encaminhar%20um%20aluno" target="_blank" rel="noopener">Encaminhar um aluno</a>
+          <a class="btn btn--ghost" href="#pedido" data-aba="encaminhar">Encaminhar um aluno</a>
         </div>
       </div>
       <div class="pc-hero__foto">
@@ -167,18 +184,126 @@
     </div>
   </section>
 
-  <section class="section section--divide">
+  <!-- HAG_SITE_PEDIDOS_PROFISSIONAIS_v1 (19/11/2026): o pedido chega completo, por e-mail e como tarefa no HAG OS -->
+  <section class="section section--divide" id="pedido">
     <div class="container pc-fim">
       <p class="eyebrow">Vamos conversar</p>
       <h2 class="h2">Quer encaminhar ou marcar <em>uma palestra?</em></h2>
-      <p>Mande uma mensagem dizendo quem você é e onde trabalha. A equipe organiza um horário para conversarmos.</p>
-      <div class="pc-botoes" style="justify-content:center">
-        <a class="btn btn--primary" href="https://wa.me/5511977962914?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20para%20profissionais%20e%20quero%20marcar%20uma%20palestra" target="_blank" rel="noopener">Marcar uma palestra</a>
-        <a class="btn btn--ghost" href="https://wa.me/5511977962914?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20para%20profissionais%20e%20quero%20encaminhar%20um%20aluno" target="_blank" rel="noopener">Encaminhar um aluno</a>
+      <p>Preencha o pedido. Ele chega completo para a equipe, que responde pelo WhatsApp ou pelo e-mail que você informar.</p>
+      <div class="pp-abas" role="tablist">
+        <button type="button" role="tab" class="pp-aba" data-aba="palestra" aria-selected="true">Marcar uma palestra</button>
+        <button type="button" role="tab" class="pp-aba" data-aba="encaminhar" aria-selected="false">Encaminhar um aluno</button>
       </div>
-      <p class="muted" style="margin-top:2rem">Dr. Henrique Alves Gonzaga, MÉDICO, CRM/SP 226530.</p>
+    </div>
+    <div class="container narrow">
+      <form class="pp-form" id="ppPalestra" data-tipo="palestra" novalidate>
+        <div class="pp-grid">
+          <label>Seu nome *<input name="nome" required autocomplete="name"></label>
+          <label>Cargo ou função<input name="cargo" placeholder="Ex.: RH, gestora, coach"></label>
+          <label>Empresa, academia ou assessoria *<input name="organizacao" required autocomplete="organization"></label>
+          <label>Tipo<select name="tipo_org"><option value="">Escolha</option><option>Empresa</option><option>Academia</option><option>Assessoria de corrida</option><option>Box de HYROX ou CrossFit</option><option>Outro</option></select></label>
+          <label>Cidade ou bairro<input name="cidade"></label>
+          <label>Formato<select name="formato"><option value="">Escolha</option><option>Presencial</option><option>Online</option><option>A definir</option></select></label>
+          <label>Data provável *<input name="data_1" type="date" required></label>
+          <label>Outra data possível<input name="data_2" type="date"></label>
+          <label>Horário<select name="horario"><option value="">Escolha</option><option>Manhã</option><option>Hora do almoço</option><option>Tarde</option><option>Noite</option></select></label>
+          <label>Público<input name="publico" placeholder="Ex.: 40 pessoas, time comercial"></label>
+          <label class="pp-larga">Tema<select name="tema"><option value="">Escolha</option><option>Emagrecer sem perder músculo</option><option>Caneta e treino: o que muda</option><option>Sono e recuperação de quem treina</option><option>Saúde metabólica depois dos 35</option><option>Tenho outra ideia</option></select></label>
+          <label class="pp-larga">Ideia ou objetivo do encontro<textarea name="ideia" rows="4" placeholder="O que vocês esperam do encontro, o momento do time, alguma ação que já está acontecendo"></textarea></label>
+          <label>WhatsApp *<input name="whatsapp" type="tel" required autocomplete="tel" placeholder="(11) 90000-0000"></label>
+          <label>E-mail *<input name="email" type="email" required autocomplete="email"></label>
+          <label class="pp-larga">Como conheceu o Dr. Henrique<input name="como_conheceu"></label>
+        </div>
+        <input class="pp-mel" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--primary" type="submit">Enviar pedido de palestra</button>
+        <p class="pp-aviso" role="status"></p>
+      </form>
+
+      <form class="pp-form" id="ppEncaminhar" data-tipo="encaminhamento" novalidate hidden>
+        <div class="pp-grid">
+          <label>Seu nome *<input name="nome" required autocomplete="name"></label>
+          <label>Profissão *<select name="profissao" required><option value="">Escolha</option><option>Personal trainer</option><option>Treinador de corrida</option><option>Coach de HYROX ou CrossFit</option><option>Nutricionista</option><option>Fisioterapeuta</option><option>Médico</option><option>Outro</option></select></label>
+          <label>Onde trabalha<input name="organizacao" placeholder="Academia, assessoria, clínica"></label>
+          <label>Seu WhatsApp *<input name="whatsapp" type="tel" required autocomplete="tel"></label>
+          <label class="pp-larga">Seu e-mail<input name="email" type="email" autocomplete="email"></label>
+          <label>Nome do aluno *<input name="aluno_nome" required></label>
+          <label>WhatsApp do aluno *<input name="aluno_whatsapp" type="tel" required></label>
+          <label class="pp-larga">Unidade de preferência<select name="unidade"><option value="">Tanto faz</option><option>Pinheiros</option><option>Tatuapé</option><option>Online</option></select></label>
+          <label class="pp-larga">Observação<textarea name="obs" rows="3" placeholder="Ex.: melhor horário para falar com ele. Não escreva diagnóstico nem dado de saúde: o aluno conta na consulta."></textarea></label>
+          <label class="pp-larga pp-check"><input type="checkbox" name="autorizou" value="sim" required> O aluno sabe da indicação e autorizou que a equipe do Dr. Henrique entre em contato com ele.</label>
+        </div>
+        <input class="pp-mel" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--primary" type="submit">Enviar indicação</button>
+        <p class="pp-aviso" role="status"></p>
+      </form>
+
+      <div class="pp-ok" id="ppOk" hidden>
+        <p class="eyebrow">Pedido recebido</p>
+        <h3 class="h3">Obrigado. Está tudo com a equipe.</h3>
+        <p id="ppOkTxt"></p>
+      </div>
+      <p class="pc-alt">Prefere conversar antes? <a href="https://wa.me/5511977962914?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20para%20profissionais%20e%20quero%20conversar%20sobre%20parceria" target="_blank" rel="noopener">Falar pelo WhatsApp</a></p>
+      <p class="muted" style="margin-top:1.5rem;text-align:center">Dr. Henrique Alves Gonzaga, MÉDICO, CRM/SP 226530.</p>
     </div>
   </section>
+  <script>
+  /* HAG_SITE_PEDIDOS_PROFISSIONAIS_v1: grava no HAG OS (hag_pedido_profissional, vira tarefa com aviso) e manda cópia por
+     e-mail (Web3Forms, caixa do consultório; resposta vai direto para quem pediu). Se um dos dois falhar, o outro basta. */
+  (function(){
+    var SURL='https://yutcnphwovqeiwcwzzhs.supabase.co', SKEY='sb_publishable_V-tdeq_qDKLAPYzN2vQuMA_okwPaOPi';
+    var W3='d826e37c-a868-4bc1-b0d3-e6c8fce06246';
+    var formas={palestra:document.getElementById('ppPalestra'), encaminhar:document.getElementById('ppEncaminhar')};
+    function aba(qual){
+      Object.keys(formas).forEach(function(k){ formas[k].hidden=(k!==qual); });
+      document.querySelectorAll('.pp-aba').forEach(function(b){ b.setAttribute('aria-selected', b.dataset.aba===qual?'true':'false'); });
+      document.getElementById('ppOk').hidden=true;
+    }
+    document.querySelectorAll('.pp-aba').forEach(function(b){ b.addEventListener('click', function(){ aba(b.dataset.aba); }); });
+    document.querySelectorAll('a[href="#pedido"][data-aba]').forEach(function(a){ a.addEventListener('click', function(){ aba(a.dataset.aba); }); });
+    if(location.hash==='#encaminhar') aba('encaminhar');
+    var ROT={nome:'Nome',cargo:'Cargo',profissao:'Profissão',organizacao:'Organização',tipo_org:'Tipo',cidade:'Cidade ou bairro',formato:'Formato',
+      data_1:'Data provável',data_2:'Outra data',horario:'Horário',publico:'Público',tema:'Tema',ideia:'Ideia ou objetivo',whatsapp:'WhatsApp',
+      email:'E-mail',como_conheceu:'Como conheceu',aluno_nome:'Aluno',aluno_whatsapp:'WhatsApp do aluno',unidade:'Unidade',obs:'Observação',autorizou:'Aluno autorizou o contato'};
+    function br(d){ return /^\d{4}-\d{2}-\d{2}$/.test(d||'') ? d.split('-').reverse().join('/') : d; }
+    Object.keys(formas).forEach(function(k){
+      var f=formas[k];
+      f.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        var aviso=f.querySelector('.pp-aviso'); aviso.textContent='';
+        var falta=[].slice.call(f.querySelectorAll('[required]')).filter(function(el){ return el.type==='checkbox' ? !el.checked : !String(el.value||'').trim(); });
+        if(falta.length){ aviso.textContent='Falta preencher: '+falta.map(function(el){ return el.type==='checkbox' ? 'autorização do aluno' : (el.closest('label').firstChild.textContent||'').replace('*','').trim(); }).join(', ')+'.'; falta[0].focus(); return; }
+        var em=f.querySelector('[name=email]'); if(em && em.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){ aviso.textContent='Confira o e-mail.'; em.focus(); return; }
+        var d={tipo:f.dataset.tipo};
+        [].slice.call(f.elements).forEach(function(el){ if(!el.name) return; if(el.type==='checkbox'){ if(el.checked) d[el.name]=el.value; } else if(String(el.value||'').trim()) d[el.name]=String(el.value).trim(); });
+        if(d.site_web) return;
+        var bt=f.querySelector('button[type=submit]'); bt.disabled=true; var txt=bt.textContent; bt.textContent='Enviando...';
+        var palestra=d.tipo==='palestra';
+        var linhas=Object.keys(ROT).filter(function(c){ return d[c]; }).map(function(c){ return ROT[c]+': '+(c.indexOf('data_')===0?br(d[c]):d[c]); });
+        var assunto=palestra ? '[Parcerias] Palestra · '+(d.organizacao||d.nome)+(d.data_1?' · '+br(d.data_1):'')
+                             : '[Parcerias] Indicação · '+d.aluno_nome+' por '+d.nome;
+        var p1=fetch(SURL+'/rest/v1/rpc/hag_pedido_profissional',{method:'POST',headers:{apikey:SKEY,Authorization:'Bearer '+SKEY,'Content-Type':'application/json'},body:JSON.stringify({p:d})})
+          .then(function(r){ return r.ok ? r.json() : null; }).then(function(j){ return !!(j&&j.ok); }).catch(function(){ return false; });
+        var p2=fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+          body:JSON.stringify({access_key:W3,subject:assunto,from_name:'Site · Para profissionais',replyto:d.email||undefined,
+            message:(palestra?'PEDIDO DE PALESTRA':'INDICAÇÃO DE ALUNO')+'\n\n'+linhas.join('\n')+'\n\nEnviado por clinicahag.com/parcerias.html',botcheck:''})})
+          .then(function(r){ return r.json(); }).then(function(j){ return !!(j&&j.success); }).catch(function(){ return false; });
+        Promise.all([p1,p2]).then(function(r){
+          bt.disabled=false; bt.textContent=txt;
+          if(!r[0] && !r[1]){
+            var w='https://wa.me/5511977962914?text='+encodeURIComponent(assunto.replace('[Parcerias] ','')+'\n'+linhas.join('\n'));
+            aviso.innerHTML='Não consegui enviar agora. <a href="'+w+'" target="_blank" rel="noopener">Mande pelo WhatsApp</a>, com tudo já escrito.'; return;
+          }
+          f.reset(); f.hidden=true;
+          document.getElementById('ppOkTxt').textContent = palestra
+            ? 'O pedido de palestra chegou com todas as informações. A equipe confere a agenda do Dr. Henrique e responde com a proposta pelo WhatsApp ou pelo e-mail.'
+            : 'A indicação chegou. A equipe entra em contato com '+(d.aluno_nome||'o aluno').split(' ')[0]+' pelo WhatsApp, e você fica sabendo pelo seu.';
+          document.getElementById('ppOk').hidden=false;
+          document.getElementById('pedido').scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      });
+    });
+  })();
+  </script>
   </main>
 
   <footer class="site-footer">

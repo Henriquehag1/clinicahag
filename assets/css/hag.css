@@ -769,3 +769,32 @@ h1, h2, h3, h4, .display { font-weight: 400; letter-spacing: 0; }
 .brand__word { font-family: var(--font-display); font-weight: 400; letter-spacing: .14em; text-transform: uppercase; font-size: .98rem; }
 .brand__cursor { display: none; }
 .site-footer .brand__mono { height: 2.2rem; }
+
+/* HAG_SITE_ENTRE_CONSULTAS_v1 (21/11/2026): secao "Entre as consultas" (acompanhamento) e faixa da home.
+   Pedido do Dr.: mostrar o que o paciente recebe entre as consultas; telas desenhadas em CSS, dados ficticios. */
+
+.ec-lista{display:grid;gap:var(--space-xl,3rem);margin-top:var(--space-xl,3rem)}
+@media(min-width:56rem){.ec-lista{grid-template-columns:repeat(2,1fr);column-gap:4rem}}
+.ec-item{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;align-items:center}
+@media(max-width:30rem){.ec-item{grid-template-columns:128px 1fr;gap:1.1rem}}
+.ec-num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;color:var(--acento);text-transform:uppercase}
+.ec-tit{font-family:var(--font-display);font-size:1.45rem;line-height:1.15;margin:.35rem 0 .5rem}
+.ec-txt{color:var(--ink-2);font-size:.98rem;line-height:1.55;margin:0}
+.ec-fone{width:150px;height:300px;border-radius:26px;background:var(--chocolate);padding:7px;box-shadow:0 18px 40px -18px rgba(34,26,22,.45)}
+@media(max-width:30rem){.ec-fone{width:128px;height:256px;border-radius:22px;padding:6px}}
+.ec-tela{width:100%;height:100%;border-radius:20px;background:var(--bg);overflow:hidden;font-family:var(--font-body);color:var(--ink);font-size:9px;line-height:1.3;position:relative}
+.ec-topo{height:16px;display:flex;justify-content:center;align-items:center}.ec-topo i{width:38px;height:9px;border-radius:9px;background:var(--chocolate)}
+.ec-pad{padding:6px 9px}
+.ec-h{font-family:var(--font-display);font-size:13px;margin:2px 0 6px}
+.ec-eb{font-family:var(--font-mono);font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ec-card{background:#fff;border:1px solid var(--hairline);border-radius:8px;padding:6px 7px;margin-bottom:5px}
+.ec-card.ac{background:var(--acento);color:#F7F2EA;border-color:var(--acento)}.ec-card.ac .ec-eb{color:#EBD9C8}
+.ec-li{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--hairline)}
+.ec-bar{height:4px;border-radius:4px;background:var(--hairline);margin:3px 0 6px;position:relative}.ec-bar b{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--acento)}
+.ec-rec{display:grid;grid-template-columns:1fr 1fr;gap:5px}.ec-rec div{border-radius:7px;height:54px;padding:5px;display:flex;align-items:flex-end;font-size:7.5px;color:#F7F2EA}
+.ec-btn{margin-top:6px;background:var(--chocolate);color:#F7F2EA;border-radius:14px;text-align:center;padding:5px;font-size:8px;letter-spacing:.08em}
+.ec-nota{margin-top:var(--space-lg,2rem);font-size:.8rem;color:var(--muted)}
+.ec-banda{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between;border:1px solid var(--hairline);border-radius:14px;padding:1.4rem 1.6rem;background:var(--surface)}
+.ec-banda p{margin:0;color:var(--ink-2);max-width:46ch}
+.ec-banda a{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--acento);padding-bottom:2px}
+
